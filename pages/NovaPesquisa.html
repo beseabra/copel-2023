@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Satisfying.you</title>
+        <link rel="stylesheet" href="../style/NovaPesquisa.css">
+    </head>
+
+    <body>
+
+    <a href="Home.html">
+        <div class="tituloPagina">
+            <img class="icon-smile" src="../icons/smile-icon.png" alt="">
+            <header>Satisfying.you</header>
+        </div>   
+    </a>
+        <div class="container">
+            <form action="Home.html" method="get">
+                <h2 class="tituloForm">Criar nova pesquisa de satisfação</h2>
+                
+                <div class="form-group">
+                    <label for="txtNomePesquisa">Nome da pesquisa</label><br>
+                    <input type="text" id="txtNomePesquisa" name="nomePesquisa" placeholder="Carnaval 2023"><br>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dtPesquisa">Data</label><br>
+                    <input type="date" id="dtPesquisa" name="dataPesq" required><br>
+                </div>
+    
+                <div class="form-group">
+                    <label for="imgPesquisa">Imagem</label><br>
+                    <input type="file" id="imgPesquisa" name="imgPesq" required><br>    
+                </div>
+    
+                <div class="containerImg">
+                    <img src="../assets/mascara.png" alt="">
+                </div>
+
+                <div class="containerCriar">
+                    <input type="submit" value="Criar">
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>
