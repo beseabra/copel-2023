@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <script>
+        let tempoTotal = 0;
+        let cronometro;
+
+        function iniciarCronometro() {
+            cronometro = setInterval(function () {
+                tempoTotal++;
+                atualizarCronometro();
+            }, 1000);
+        }
+
+        function pararCronometro() {
+            clearInterval(cronometro);
+        }
+
+        function zerarCronometro() {
+            tempoTotal = 0;
+            atualizarCronometro();
+        }
+
+        function atualizarCronometro() {
+            const minutos = Math.floor((tempoTotal % 3600) / 60);
+            const segundos = tempoTotal % 60;
+
+            const formatoMinutos = minutos.toString().padStart(2, '0');
+            const formatoSegundos = segundos.toString().padStart(2, '0');
+
+            document.getElementById('cronometro').textContent = `${formatoMinutos}:${formatoSegundos}`;
+        }
+
+        window.onload = function () {
+            iniciarCronometro();
+        }
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaltaEnergia</title>
+    <link rel="stylesheet" href="../style/FaltaEnergia.css">
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="teste">
+            <div>
+                <div class="dados">
+                    <div>
+                        <p class="title">ATENDIMENTO INICIADO A </p>
+
+
+                    </div>
+                    <h1 class="subtitle"> Maria Jesus Da Silva</h1>
+                </div>
+                <div class="endereco">
+                    <p><span class="adress">LOGADOURO:</span> Av. Rua do Bairro Flore, 00 - CURITIBA-CP</p>
+                    <P><span class="adress">CPF:</span> 000.000.000-00 <span class="adress">UC:</span> 00000000</P>
+                </div>
+            </div>
+            <div class="register">
+                <a href="Home.html" target="_self" class="voltar">
+                    <img src="../icons/registrar.svg" alt="">
+                </a>
+            </div>
+            <div class="container-header">
+                <a href="Home.html" target="_self" class="voltar">x</a>
+
+                <div id="cronometro" class="cronometro">00:00</div>
+
+
+
+            </div>
+        </div>
+
+    </header>
+
+    <p class="ura">2. FALTA DE ENERGIA OU PROBLEMA NA REDE ELÉTRICA</p>
+    <p class="title-container">FATURAMENTO <a href="Home.html" target="_self" class="voltar">+</a></p>
+    <div class="container-wrapper">
+        <div class="container">
+            <div class="mes-ano">
+                <div>
+                    ABRIL
+                </div>
+                <div>
+                    2023
+                </div>
+            </div>
+
+            <div class="valor">
+                R$ 128,37
+            </div>
+            <div class="status">
+                <div style="color: #EBAC0B;">
+                    ABERTA
+                </div>
+                .......................................
+                <div>
+                    15/05
+                </div>
+            </div>
+            <div class="clock">
+                <img src="../icons/clock.svg" alt="">
+                <div class="container-consumo">
+                    <div class="consumo">
+                        <b>2400 kW </b> &nbsp; CONSUMIDOS
+                    </div>
+                    <div class="consumo">
+                        22/03 | 23/04
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mes-ano">
+                <div>
+                    MARÇO
+                </div>
+                <div>
+                    2023
+                </div>
+            </div>
+            <div class="valor">
+                R$ 137,46
+            </div>
+            <div class="status">
+                <div style="color: red;">
+                    ATRASADA
+                </div>
+                .......................................
+                <div>
+                    11/05
+                </div>
+            </div>
+            <div class="clock">
+                <img src="../icons/clock.svg" alt="">
+                <div class="container-consumo">
+                    <div class="consumo">
+                        <b>2780 kW </b> &nbsp; CONSUMIDOS
+                    </div>
+                    <div class="consumo">
+                        22/02 | 23/03
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mes-ano">
+                <div>
+                    FEVEREIRO
+                </div>
+                <div>
+                    2023
+                </div>
+            </div>
+            <div class="valor">
+                R$ 128,37
+            </div>
+            <div class="status">
+                <div style="color:green;">
+                    FECHADA
+                </div>
+                .......................................
+                <div>
+                    15/05
+                </div>
+            </div>
+            <div class="clock">
+                <img src="../icons/clock.svg" alt="">
+                <div class="container-consumo">
+                    <div class="consumo">
+                        <b>2400 kW </b> &nbsp; CONSUMIDOS
+                    </div>
+                    <div class="consumo">
+                        22/03 | 23/04
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal">
+            <a href="Home.html" target="_self">
+                <img src="../icons/interrogation.svg" alt="">
+            </a>
+        </div>
+
+    </div>
+    <p class="title-container">ORDEM DE SERVIÇO <a href="Home.html" target="_self" class="voltar">+</a> </p>
+    <div class="ordem">
+        <div class="container">
+            <div class="mes-ano">
+                <div>
+                    ABRIL
+                </div>
+                <div>
+                    2023
+                </div>
+            </div>
+
+            <div class="text">
+                Não há registro de ordem de serviço na região
+            </div>
+        </div>
+        <div class="container">
+            <div class="mes-ano">
+                <div>
+                    MARÇO
+                </div>
+                <div>
+                    2023
+                </div>
+            </div>
+            <div class="text">
+                Não há registro de ordem de serviço na região
+            </div>
+        </div>
+        <div class="container">
+            <div class="mes-ano">
+                <div>
+                    FEVEREIRO
+                </div>
+                <div>
+                    2023
+                </div>
+            </div>
+            <div class="text">
+                Desligamento de energia por conta de atraso no pagamento <br>
+                <b>FINALIZADA:
+                </b>15/05/2023 | 15:00:00
+                <div style="margin-top: 0.5rem;">
+                    Desligamento de energia. <br>
+                    <b>FINALIZADA:
+                    </b>15/05/2023 | 15:00:00
+                </div>
+            </div>
+
+        </div>
+        <div class="modal">
+            <a href="Home.html" target="_self">
+                <img src="../icons/interrogation.svg" alt="">
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
