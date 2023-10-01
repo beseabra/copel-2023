@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORDEM DE SERVIÇO</title>
+  <link rel="stylesheet" href="../style/Teste.css">
+</head>
+
+<body>
+  <!-- Seu conteúdo HTML existente -->
+
+  <button id="add-task">
+    <span>add</span>
+  </button>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+      <h2>Criar Nova Ordem de Serviço</h2>
+      <form>
+        <!-- Seu formulário aqui -->
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao">
+        <br>
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript para controlar o modal -->
+  <script>
+    // Função para mostrar o modal
+    function showModal() {
+      const modal = document.getElementById("modal");
+      modal.style.display = "flex";
+    }
+
+    // Função para fechar o modal
+    function closeModal() {
+      const modal = document.getElementById("modal");
+      modal.style.display = "none";
+    }
+
+    // Event listener para o botão "Add"
+    document.getElementById("add-task").addEventListener("click", showModal);
+
+    // Event listener para o botão de fechar no modal
+    document.getElementById("close-modal").addEventListener("click", closeModal);
+
+    // Fechar o modal se o usuário clicar fora dele
+    window.addEventListener("click", function (event) {
+      const modal = document.getElementById("modal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+
+</html>
