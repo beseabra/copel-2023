@@ -51,6 +51,10 @@ body {
   text-align: center;
 }
 .infosOs {
+  width: inherit;
+  margin-left: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .container {
