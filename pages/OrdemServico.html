@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORDEM DE SERVIÇO</title>
+  <link rel="stylesheet" href="../style/OrdemServico.css">
+</head>
+
+<body>
+  <header class="cabecalho">
+    <div class="teste">
+      <div>
+        <div class="dados">
+          <div>
+            <p class="title">ATENDIMENTO INICIADO A </p>
+
+
+          </div>
+          <h1 class="subtitle"> Maria Jesus Da Silva</h1>
+        </div>
+        <div class="endereco">
+          <p><span class="adress">LOGADOURO:</span> Av. Rua do Bairro Flore, 00 - CURITIBA-CP</p>
+          <P><span class="adress">CPF:</span> 000.000.000-00 <span class="adress">UC:</span> 00000000</P>
+        </div>
+      </div>
+      <div class="logo">
+        <a href="Home.html" target="_self" class="voltar">
+          <img src="../icons/logo.png" alt="">
+        </a>
+      </div>
+      <div class="register">
+        <a href="Home.html" target="_self" class="voltar">
+          <img src="../icons/registrar.svg" alt="">
+        </a>
+      </div>
+      <div class="container-header">
+        <a href="Home.html" target="_self" class="voltar">x</a>
+
+        <div id="cronometro" class="cronometro">00:00</div>
+
+
+
+      </div>
+    </div>
+
+  </header>
+
+  <div class="title-faturamento">
+    <div style="padding: 0.8rem;">
+      <a href="Home.html"><img src="../icons/back.svg" alt=""></a>
+    </div>
+    <div style="width: 85rem;">
+      <p class="ura">ORDEM DE SERVIÇO</p>
+    </div>
+  </div>
+
+  <div class="container-wrapper">
+    <div class="container">
+      <div class="mes-ano">
+        <div>
+          ABRIL
+        </div>
+        <div>
+          2023
+        </div>
+      </div>
+
+      <div style="margin-top: 1rem; margin-left: 2rem; font-size: 1.3rem;">Não há registro de ordens de serviço na
+        região</div>
+
+      <div style="font-size: 1.8rem; padding-top: 10rem" margin: 0>CRIAR NOVA ORDEM </div>
+      <div style="font-size: 1.8rem"> DE
+        SERVIÇO</div>
+      <button id="add-task" style="background-color: white; color: black; font-size: larger;">
+        +
+      </button>
+    </div>
+    <div class="container">
+      <div class="mes-ano">
+        <div>
+          MARÇO
+        </div>
+        <div>
+          2023
+        </div>
+      </div>
+      <div style="margin-top: 1rem; margin-left: 2rem; font-size: 1.3rem;">Não há registro de ordens de serviço na
+        região</div>
+    </div>
+    <div class="container">
+      <div class="mes-ano">
+        <div>
+          FEVEREIRO
+        </div>
+        <div>
+          2023
+        </div>
+      </div>
+      <div class="text">
+        Desligamento de energia por conta de atraso no pagamento <br>
+        <b>FINALIZADA:
+        </b>15/05/2023 | 15:00:00
+        <div style="margin-top: 0.5rem;">
+          Desligamento de energia. <br>
+          <b>FINALIZADA:
+          </b>15/05/2023 | 15:00:00
+        </div>
+      </div>
+    </div>
+    <div class="help">
+      <a href="Home.html" target="_self">
+        <img src="../icons/interrogation.svg" alt="">
+      </a>
+    </div>
+
+  </div>
+
+  </header>
+
+  <!-- Seu conteúdo HTML existente -->
+
+
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="buttonModal">&times;</span>
+      <h2 style="margin-bottom: 1rem; margin-top: 1rem; text-align: center;">Criar Nova Ordem de Serviço</h2>
+      <form>
+        <!-- Seu formulário aqui -->
+        <label for="descricao" style="font-weight: 600;">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" style="margin-bottom: 1rem; width: 20rem;  ">
+
+        <label for="descricao" style="font-weight: 600;">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" style="margin-bottom: 1rem; width: 100%;">
+
+        <label for="descricao" style="font-weight: 600;">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" style="margin-bottom: 1rem; width: 100%;">
+        <br>
+        <div class="buttonModal">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript para controlar o modal -->
+  <script>
+    // Função para mostrar o modal
+    function showModal() {
+      const modal = document.getElementById("modal");
+      modal.style.display = "flex";
+    }
+
+    // Função para fechar o modal
+    function closeModal() {
+      const modal = document.getElementById("modal");
+      modal.style.display = "none";
+    }
+
+    // Event listener para o botão "Add"
+    document.getElementById("add-task").addEventListener("click", showModal);
+
+    // Event listener para o botão de fechar no modal
+    document.getElementById("close-modal").addEventListener("click", closeModal);
+
+    // Fechar o modal se o usuário clicar fora dele
+    window.addEventListener("click", function (event) {
+      const modal = document.getElementById("modal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+    let tempoTotal = 0;
+    let cronometro;
+
+    function iniciarCronometro() {
+      cronometro = setInterval(function () {
+        tempoTotal++;
+        atualizarCronometro();
+      }, 1000);
+    }
+
+    function pararCronometro() {
+      clearInterval(cronometro);
+    }
+
+    function zerarCronometro() {
+      tempoTotal = 0;
+      atualizarCronometro();
+    }
+
+    function atualizarCronometro() {
+      const minutos = Math.floor((tempoTotal % 3600) / 60);
+      const segundos = tempoTotal % 60;
+
+      const formatoMinutos = minutos.toString().padStart(2, '0');
+      const formatoSegundos = segundos.toString().padStart(2, '0');
+
+      document.getElementById('cronometro').textContent = `${formatoMinutos}:${formatoSegundos}`;
+    }
+
+    window.onload = function () {
+      iniciarCronometro();
+    }
+  </script>
+</body>
+
+</html>
