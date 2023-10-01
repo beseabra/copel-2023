@@ -10,19 +10,6 @@ body {
   background-color: #e25c10;
 }
 
-.title {
-  font-size: 1.5rem;
-  margin-left: 1rem;
-}
-
-.adress {
-  margin-left: 1rem;
-  font-weight: 600;
-}
-.subtitle {
-  font-size: 3rem;
-  margin-left: 1rem;
-}
 .teste {
   display: flex;
   justify-content: space-between;
@@ -39,31 +26,41 @@ body {
 .dados {
   color: #fff;
 }
-.endereco {
+.menu {
   color: #fff;
-  font-size: 20px;
+  font-size: 45px;
+  margin-left: 20px;
+}
+.ura {
+  margin: 1rem 1rem;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .tituloBox {
-  font-size: 30px;
+  font-size: 1.8rem;
   color: #3f92c5;
   margin: 10px;
   text-align: center;
 }
 
 .container {
-  width: 25rem;
-  height: 11rem;
+  width: 40rem;
+  height: 6rem;
   background-color: #ffff;
   margin-left: 1rem;
   padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  margin-bottom: 1.5rem;
 }
 .voltar {
   color: #fff;
@@ -79,60 +76,11 @@ body {
   align-items: flex-end;
 }
 
-.title-container {
-  margin: 0.5rem 1rem;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-.valor {
-  font-size: 1.5rem;
-  font-weight: 800;
-  width: 100%;
-  display: flex;
-  padding-right: 4rem;
-  margin-top: 0.5rem;
-  flex-direction: row-reverse;
-}
-.mes-ano {
-  display: flex;
-  justify-content: space-between;
-  width: 21rem;
-  font-weight: 800;
-  border-bottom: 2px;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  border-color: red;
-  border-style: solid;
-}
-.status {
-  display: flex;
-  justify-content: space-between;
-  width: 21rem;
-  font-weight: 800;
-  padding-right: 0.5rem;
-  padding-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.consumo {
-  display: flex;
-  width: 70%;
-  margin-top: 0.4rem;
-  text-align: center;
-  justify-content: center;
-}
-.text {
-  padding: 1rem;
-  margin-left: 1rem;
-  padding-bottom: 0;
-}
 .textFinalization {
   padding-left: 1rem;
   margin-left: 1rem;
 }
-.header {
-}
+
 .cronometro {
   width: 158px;
   font-size: 4rem;
@@ -164,12 +112,7 @@ body {
   align-items: center;
   padding-bottom: 1.5rem;
 }
-.container-consumo {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .ordem {
   display: flex;
 }
@@ -178,14 +121,7 @@ body {
   padding-left: 3.5rem;
   display: flex;
 }
-.ura {
-  margin: 0.4rem 1rem;
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.3rem;
-  display: flex;
-  justify-content: center;
-}
+
 .tituloBox {
   font-size: 1.25rem;
 }
