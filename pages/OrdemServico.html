@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ORDEM DE SERVIÇO</title>
   <link rel="stylesheet" href="../style/OrdemServico.css">
+  <style>
+    /* Adicione aqui seu CSS personalizado, se necessário */
+  </style>
 </head>
 
 <body>
@@ -14,15 +17,13 @@
       <div>
         <div class="dados">
           <div>
-            <p class="title">ATENDIMENTO INICIADO A </p>
-
-
+            <p class="title">ATENDIMENTO INICIADO A</p>
           </div>
-          <h1 class="subtitle"> Maria Jesus Da Silva</h1>
+          <h1 class="subtitle">Maria Jesus Da Silva</h1>
         </div>
         <div class="endereco">
           <p><span class="adress">LOGADOURO:</span> Av. Rua do Bairro Flore, 00 - CURITIBA-CP</p>
-          <P><span class="adress">CPF:</span> 000.000.000-00 <span class="adress">UC:</span> 00000000</P>
+          <p><span class="adress">CPF:</span> 000.000.000-00 <span class="adress">UC:</span> 00000000</p>
         </div>
       </div>
       <div class="logo">
@@ -31,20 +32,16 @@
         </a>
       </div>
       <div class="register">
-        <a href="Home.html" target="_self" class="voltar">
+        <!-- Botão para abrir a terceira modal -->
+        <button id="add-register" style="background-color: transparent; border: none;">
           <img src="../icons/registrar.svg" alt="">
-        </a>
+        </button>
       </div>
       <div class="container-header">
         <a href="Home.html" target="_self" class="voltar">x</a>
-
         <div id="cronometro" class="cronometro">00:00</div>
-
-
-
       </div>
     </div>
-
   </header>
 
   <div class="title-faturamento">
@@ -66,16 +63,11 @@
           2023
         </div>
       </div>
-
       <div style="margin-top: 1rem; margin-left: 2rem; font-size: 1.3rem;">Não há registro de ordens de serviço na
         região</div>
-
-      <div style="font-size: 1.8rem; padding-top: 10rem" margin: 0>CRIAR NOVA ORDEM </div>
-      <div style="font-size: 1.8rem"> DE
-        SERVIÇO</div>
-      <button id="add-task" style="background-color: white; color: black; font-size: larger;">
-        +
-      </button>
+      <div style="font-size: 1.8rem; padding-top: 10rem" margin: 0>CRIAR NOVA ORDEM</div>
+      <div style="font-size: 1.8rem">DE SERVIÇO</div>
+      <button id="add-task" style="background-color: white; color: black; font-size: larger;">+</button>
     </div>
     <div class="container">
       <div class="mes-ano">
@@ -100,44 +92,35 @@
       </div>
       <div class="text">
         Desligamento de energia por conta de atraso no pagamento <br>
-        <b>FINALIZADA:
-        </b>15/05/2023 | 15:00:00
+        <b>FINALIZADA:</b> 15/05/2023 | 15:00:00
         <div style="margin-top: 0.5rem;">
           Desligamento de energia. <br>
-          <b>FINALIZADA:
-          </b>15/05/2023 | 15:00:00
+          <b>FINALIZADA:</b> 15/05/2023 | 15:00:00
         </div>
       </div>
     </div>
     <div class="help">
-      <a href="Home.html" target="_self">
+      <!-- Botão para abrir a segunda modal (Ajuda) -->
+      <button id="add-help" style="background-color: #e25c10; color: black; font-size: larger;">
         <img src="../icons/interrogation.svg" alt="">
-      </a>
+      </button>
     </div>
-
   </div>
 
-  </header>
-
-  <!-- Seu conteúdo HTML existente -->
-
-
-
+  <!-- Modal existente -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span id="close-modal" class="buttonModal">&times;</span>
       <h2 style="margin-bottom: 1rem; margin-top: 1rem; text-align: center;">Criar Nova Ordem de Serviço</h2>
       <form>
-        <!-- Seu formulário aqui -->
+        <!-- Conteúdo da modal existente aqui -->
         <label for="descricao" style="font-weight: 600;">Descrição:</label>
-        <input type="text" id="descricao" name="descricao" style="margin-bottom: 1rem; width: 20rem;  ">
-
+        <input type="text" id="descricao" name="descricao" style="margin-bottom: 1rem; width: 20rem;">
         <label for="descricao" style="font-weight: 600;">Descrição:</label>
-        <input type="text" id="descricao" name="descricao" style="margin-bottom: 1rem; width: 100%;">
-
+        <input type="text" id="descricao" name="descricao" style="margin-bottom: 1rem; width: 20rem;">
         <label for="descricao" style="font-weight: 600;">Descrição:</label>
-        <input type="text" id="descricao" name="descricao" style="margin-bottom: 1rem; width: 100%;">
-        <br>
+        <input type="text" id="descricao" name="descricao" style="margin-bottom: 1rem; width: 20rem;">
+        <!-- Adicione outros campos conforme necessário -->
         <div class="buttonModal">
           <button type="submit">Salvar</button>
         </div>
@@ -145,65 +128,114 @@
     </div>
   </div>
 
-  <!-- JavaScript para controlar o modal -->
+  <!-- Modal de Ajuda -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span id="close-modal2" class="buttonModal">&times;</span>
+      <h2 style="margin-bottom: 1rem; margin-top: 1rem; text-align: center;">Ajuda</h2>
+      <!-- Conteúdo da modal de Ajuda aqui -->
+      <p>Esta é um espaço de ajuda. Aqui estarão dicas e orientações para o atendimento.</p>
+    </div>
+  </div>
+
+  <!-- Modal para o ícone "Registrar" -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span id="close-modal3" class="buttonModal">&times;</span>
+      <h2 style="margin-bottom: 1rem; margin-top: 1rem; text-align: center;">Registrar</h2>
+      <!-- Conteúdo da modal para o ícone "Registrar" aqui -->
+      <label for="descricao" style="font-weight: 600;">Descrição:</label>
+      <br>
+      <textarea name="textarea" cols="30" rows="10" style="width: 100%;"></textarea>
+
+      <select name="select" id="select" style="margin-top: 1rem; width: 100%;">
+        <option value="value1">Cliente solicitou segunda via de Faturamento.</option>
+        <option value="value2">Cliente solicitou consulta de debitos</option>
+        <option value="value3">Cliente informou queda de energia na região</option>
+      </select>
+      <button type="submit" style="margin-top: 1rem; height: 1.5rem; ;">Salvar Registro</button>
+
+    </div>
+  </div>
+
   <script>
-    // Função para mostrar o modal
-    function showModal() {
+    // Função para mostrar a modal existente
+    function openModal() {
       const modal = document.getElementById("modal");
       modal.style.display = "flex";
     }
 
-    // Função para fechar o modal
+    // Função para fechar a modal existente
     function closeModal() {
       const modal = document.getElementById("modal");
       modal.style.display = "none";
     }
 
-    // Event listener para o botão "Add"
-    document.getElementById("add-task").addEventListener("click", showModal);
+    // Event listener para o botão "Add" que abre a modal existente
+    document.getElementById("add-task").addEventListener("click", openModal);
 
-    // Event listener para o botão de fechar no modal
+    // Event listener para o botão de fechar na modal existente
     document.getElementById("close-modal").addEventListener("click", closeModal);
 
-    // Fechar o modal se o usuário clicar fora dele
+    // Fechar a modal existente se o usuário clicar fora dela
     window.addEventListener("click", function (event) {
       const modal = document.getElementById("modal");
       if (event.target === modal) {
         closeModal();
       }
     });
-    let tempoTotal = 0;
-    let cronometro;
 
-    function iniciarCronometro() {
-      cronometro = setInterval(function () {
-        tempoTotal++;
-        atualizarCronometro();
-      }, 1000);
+    // Função para mostrar a modal de Ajuda
+    function openHelpModal() {
+      const modal2 = document.getElementById("modal2");
+      modal2.style.display = "flex";
     }
 
-    function pararCronometro() {
-      clearInterval(cronometro);
+    // Event listener para o botão de Ajuda que abre a modal de Ajuda
+    document.getElementById("add-help").addEventListener("click", openHelpModal);
+
+    // Event listener para o botão de fechar na modal de Ajuda
+    document.getElementById("close-modal2").addEventListener("click", closeHelpModal);
+
+    // Função para fechar a modal de Ajuda
+    function closeHelpModal() {
+      const modal2 = document.getElementById("modal2");
+      modal2.style.display = "none";
     }
 
-    function zerarCronometro() {
-      tempoTotal = 0;
-      atualizarCronometro();
+    // Função para mostrar a modal para o ícone "Registrar"
+    function openRegisterModal() {
+      const modal3 = document.getElementById("modal3");
+      modal3.style.display = "flex";
     }
 
-    function atualizarCronometro() {
-      const minutos = Math.floor((tempoTotal % 3600) / 60);
-      const segundos = tempoTotal % 60;
+    // Event listener para o ícone "Registrar" que abre a modal para o ícone "Registrar"
+    document.getElementById("add-register").addEventListener("click", openRegisterModal);
 
-      const formatoMinutos = minutos.toString().padStart(2, '0');
-      const formatoSegundos = segundos.toString().padStart(2, '0');
+    // Event listener para o botão de fechar na modal para o ícone "Registrar"
+    document.getElementById("close-modal3").addEventListener("click", closeRegisterModal);
 
-      document.getElementById('cronometro').textContent = `${formatoMinutos}:${formatoSegundos}`;
+    // Função para fechar a modal para o ícone "Registrar"
+    function closeRegisterModal() {
+      const modal3 = document.getElementById("modal3");
+      modal3.style.display = "none";
+    }
+    function addWordToTextarea() {
+      const select = document.getElementById("select");
+      const textarea = document.querySelector("textarea");
+
+      // Verifica se uma opção foi selecionada
+      if (select.selectedIndex !== -1) {
+        const selectedOption = select.options[select.selectedIndex];
+        const wordToAdd = selectedOption.text;
+
+        // Adiciona a palavra selecionada ao textarea
+        textarea.value += wordToAdd + " ";
+      }
     }
 
-    window.onload = function () {
-      iniciarCronometro();
-    }
+    // Event listener para o botão "add"
+    document.querySelector("#modal3 button[type='submit']").addEventListener("click", addWordToTextarea);
   </script>
 </body>
 
