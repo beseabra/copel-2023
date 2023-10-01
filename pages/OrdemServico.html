@@ -101,7 +101,7 @@
     </div>
     <div class="help">
       <!-- Botão para abrir a segunda modal (Ajuda) -->
-      <button id="add-help" style="background-color: #e25c10; color: black; font-size: larger;">
+      <button id="add-help" style="background-color: #e25c10; color: black; font-size: larger; border: 0;">
         <img src="../icons/interrogation.svg" alt="">
       </button>
     </div>
@@ -156,87 +156,126 @@
       <button type="submit" style="margin-top: 1rem; height: 1.5rem; ;">Salvar Registro</button>
 
     </div>
-  </div>
 
-  <script>
-    // Função para mostrar a modal existente
-    function openModal() {
-      const modal = document.getElementById("modal");
-      modal.style.display = "flex";
-    }
+    <script>
 
-    // Função para fechar a modal existente
-    function closeModal() {
-      const modal = document.getElementById("modal");
-      modal.style.display = "none";
-    }
-
-    // Event listener para o botão "Add" que abre a modal existente
-    document.getElementById("add-task").addEventListener("click", openModal);
-
-    // Event listener para o botão de fechar na modal existente
-    document.getElementById("close-modal").addEventListener("click", closeModal);
-
-    // Fechar a modal existente se o usuário clicar fora dela
-    window.addEventListener("click", function (event) {
-      const modal = document.getElementById("modal");
-      if (event.target === modal) {
-        closeModal();
+      // Função para mostrar a modal existente
+      function openModal() {
+        const modal = document.getElementById("modal");
+        modal.style.display = "flex";
       }
-    });
 
-    // Função para mostrar a modal de Ajuda
-    function openHelpModal() {
-      const modal2 = document.getElementById("modal2");
-      modal2.style.display = "flex";
-    }
-
-    // Event listener para o botão de Ajuda que abre a modal de Ajuda
-    document.getElementById("add-help").addEventListener("click", openHelpModal);
-
-    // Event listener para o botão de fechar na modal de Ajuda
-    document.getElementById("close-modal2").addEventListener("click", closeHelpModal);
-
-    // Função para fechar a modal de Ajuda
-    function closeHelpModal() {
-      const modal2 = document.getElementById("modal2");
-      modal2.style.display = "none";
-    }
-
-    // Função para mostrar a modal para o ícone "Registrar"
-    function openRegisterModal() {
-      const modal3 = document.getElementById("modal3");
-      modal3.style.display = "flex";
-    }
-
-    // Event listener para o ícone "Registrar" que abre a modal para o ícone "Registrar"
-    document.getElementById("add-register").addEventListener("click", openRegisterModal);
-
-    // Event listener para o botão de fechar na modal para o ícone "Registrar"
-    document.getElementById("close-modal3").addEventListener("click", closeRegisterModal);
-
-    // Função para fechar a modal para o ícone "Registrar"
-    function closeRegisterModal() {
-      const modal3 = document.getElementById("modal3");
-      modal3.style.display = "none";
-    }
-    function addWordToTextarea() {
-      const select = document.getElementById("select");
-      const textarea = document.querySelector("textarea");
-
-      // Verifica se uma opção foi selecionada
-      if (select.selectedIndex !== -1) {
-        const selectedOption = select.options[select.selectedIndex];
-        const wordToAdd = selectedOption.text;
-
-        // Adiciona a palavra selecionada ao textarea
-        textarea.value += wordToAdd + " ";
+      // Função para fechar a modal existente
+      function closeModal() {
+        const modal = document.getElementById("modal");
+        modal.style.display = "none";
       }
-    }
 
-    // Event listener para o botão "add"
-    document.querySelector("#modal3 button[type='submit']").addEventListener("click", addWordToTextarea);
-  </script>
+      // Event listener para o botão "Add" que abre a modal existente
+      document.getElementById("add-task").addEventListener("click", openModal);
+
+      // Event listener para o botão de fechar na modal existente
+      document.getElementById("close-modal").addEventListener("click", closeModal);
+
+      // Fechar a modal existente se o usuário clicar fora dela
+      window.addEventListener("click", function (event) {
+        const modal = document.getElementById("modal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Função para mostrar a modal de Ajuda
+      function openHelpModal() {
+        const modal2 = document.getElementById("modal2");
+        modal2.style.display = "flex";
+      }
+
+      // Event listener para o botão de Ajuda que abre a modal de Ajuda
+      document.getElementById("add-help").addEventListener("click", openHelpModal);
+
+      // Event listener para o botão de fechar na modal de Ajuda
+      document.getElementById("close-modal2").addEventListener("click", closeHelpModal);
+
+      // Função para fechar a modal de Ajuda
+      function closeHelpModal() {
+        const modal2 = document.getElementById("modal2");
+        modal2.style.display = "none";
+      }
+
+      // Função para mostrar a modal para o ícone "Registrar"
+      function openRegisterModal() {
+        const modal3 = document.getElementById("modal3");
+        modal3.style.display = "flex";
+      }
+
+      // Event listener para o ícone "Registrar" que abre a modal para o ícone "Registrar"
+      document.getElementById("add-register").addEventListener("click", openRegisterModal);
+
+      // Event listener para o botão de fechar na modal para o ícone "Registrar"
+      document.getElementById("close-modal3").addEventListener("click", closeRegisterModal);
+
+      // Função para fechar a modal para o ícone "Registrar"
+      function closeRegisterModal() {
+        const modal3 = document.getElementById("modal3");
+        modal3.style.display = "none";
+      }
+      function addWordToTextarea() {
+        const select = document.getElementById("select");
+        const textarea = document.querySelector("textarea");
+
+        // Verifica se uma opção foi selecionada
+        if (select.selectedIndex !== -1) {
+          const selectedOption = select.options[select.selectedIndex];
+          const wordToAdd = selectedOption.text;
+
+          // Adiciona a palavra selecionada ao textarea
+          textarea.value += wordToAdd + " ";
+        }
+      }
+
+      // Event listener para o botão "add"
+      document.querySelector("#modal3 button[type='submit']").addEventListener("click", addWordToTextarea);
+
+      window.addEventListener("click", function (event) {
+        const modal = document.getElementById("modal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+      let tempoTotal = 0;
+      let cronometro;
+
+      function iniciarCronometro() {
+        cronometro = setInterval(function () {
+          tempoTotal++;
+          atualizarCronometro();
+        }, 1000);
+      }
+
+      function pararCronometro() {
+        clearInterval(cronometro);
+      }
+
+      function zerarCronometro() {
+        tempoTotal = 0;
+        atualizarCronometro();
+      }
+
+      function atualizarCronometro() {
+        const minutos = Math.floor((tempoTotal % 3600) / 60);
+        const segundos = tempoTotal % 60;
+
+        const formatoMinutos = minutos.toString().padStart(2, '0');
+        const formatoSegundos = segundos.toString().padStart(2, '0');
+
+        document.getElementById('cronometro').textContent = `${formatoMinutos}:${formatoSegundos}`;
+      }
+
+      window.onload = function () {
+        iniciarCronometro();
+      }
+    </script>
 </body>
 
 </html>
