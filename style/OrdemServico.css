@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  height: 100vh;
+  background-color: #e25c10;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.adress {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+.subtitle {
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+.teste {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+.cabecalho {
+  width: 100%;
+  height: 170px;
+  background-color: #a64006;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dados {
+  color: #fff;
+}
+.endereco {
+  color: #fff;
+  font-size: 20px;
+}
+
+.tituloBox {
+  font-size: 30px;
+  color: #3f92c5;
+  margin: 10px;
+  text-align: center;
+}
+.infosOs {
+  width: inherit;
+  margin-left: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  width: 25rem;
+  height: 26rem;
+  background-color: #ffff;
+  margin-left: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.voltar {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container-wrapper {
+  display: flex;
+  margin-top: 1rem;
+}
+.container-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.title-container {
+  margin: 0.5rem 1rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.valor {
+  font-size: 1.5rem;
+  font-weight: 800;
+  width: 100%;
+  display: flex;
+  padding-right: 4rem;
+  margin-top: 0.5rem;
+  flex-direction: row-reverse;
+}
+.mes-ano {
+  display: flex;
+  justify-content: space-between;
+  width: 21rem;
+  font-weight: 800;
+  border-bottom: 2px;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-color: red;
+  border-style: solid;
+}
+.status {
+  display: flex;
+  justify-content: space-between;
+  width: 21rem;
+  font-weight: 800;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.consumo {
+  display: flex;
+  width: 70%;
+  margin-top: 0.4rem;
+  text-align: center;
+  justify-content: center;
+}
+.text {
+  padding: 1rem;
+  margin-left: 1rem;
+  padding-bottom: 0;
+}
+.textFinalization {
+  padding-left: 1rem;
+  margin-left: 1rem;
+}
+.header {
+}
+.cronometro {
+  width: 158px;
+  font-size: 4rem;
+  color: #fff;
+  border-left: 2px solid #fff;
+  padding-left: 2rem;
+  padding-right: 10px;
+}
+.modal {
+  width: 14rem;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+}
+.register {
+  display: flex;
+  width: 11.5rem;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-right: 1rem;
+  padding-bottom: 1.5rem;
+}
+.logo {
+  display: flex;
+  margin-top: 1rem;
+  width: 30rem;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
+.container-consumo {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ordem {
+  display: flex;
+}
+.clock {
+  width: 100%;
+  padding-left: 3.5rem;
+  display: flex;
+}
+.ura {
+  margin: 1rem 1rem;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+}
+.title-faturamento {
+  display: flex;
+}
+.tituloBox {
+  font-size: 1.25rem;
+}
+
+.subtituloBox {
+  font-size: 1rem;
+}
