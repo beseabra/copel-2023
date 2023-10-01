@@ -2,18 +2,65 @@
 <html lang="pt-BR">
 
 <head>
+
+    <script>
+        let tempoTotal = 0;
+        let cronometro;
+
+        function iniciarCronometro() {
+            cronometro = setInterval(function () {
+                tempoTotal++;
+                atualizarCronometro();
+            }, 1000);
+        }
+
+        function pararCronometro() {
+            clearInterval(cronometro);
+        }
+
+        function zerarCronometro() {
+            tempoTotal = 0;
+            atualizarCronometro();
+        }
+
+        function atualizarCronometro() {
+            const minutos = Math.floor((tempoTotal % 3600) / 60);
+            const segundos = tempoTotal % 60;
+
+            const formatoMinutos = minutos.toString().padStart(2, '0');
+            const formatoSegundos = segundos.toString().padStart(2, '0');
+
+            document.getElementById('cronometro').textContent = `${formatoMinutos}:${formatoSegundos}`;
+        }
+
+        window.onload = function () {
+            iniciarCronometro();
+        }
+
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FaltaEnergia</title>
-    <link rel="stylesheet" href="../style/Home.css">
+    <link rel="stylesheet" href="../style/FaltaEnergia.css">
 
 </head>
 
 <body>
     <header class="cabecalho">
         <div class="teste">
-            <div class="menu">
-                <h1>MENU</h1>
+            <div>
+                <div class="dados">
+                    <div>
+                        <p class="title">ATENDIMENTO INICIADO A </p>
+
+
+                    </div>
+                    <h1 class="subtitle"> Maria Jesus Da Silva</h1>
+                </div>
+                <div class="endereco">
+                    <p><span class="adress">LOGADOURO:</span> Av. Rua do Bairro Flore, 00 - CURITIBA-CP</p>
+                    <P><span class="adress">CPF:</span> 000.000.000-00 <span class="adress">UC:</span> 00000000</P>
+                </div>
             </div>
             <div class="logo">
                 <a href="Home.html" target="_self" class="voltar">
@@ -29,6 +76,9 @@
                 <a href="Home.html" target="_self" class="voltar">x</a>
 
                 <div id="cronometro" class="cronometro">00:00</div>
+
+
+
             </div>
         </div>
 

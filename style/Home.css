@@ -10,10 +10,18 @@ body {
   background-color: #e25c10;
 }
 
-.menu{
-  color: #fff;
-  margin-left: 20px;
-  font-size: 40px;
+.title {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.adress {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+.subtitle {
+  font-size: 3rem;
+  margin-left: 1rem;
 }
 .teste {
   display: flex;
@@ -27,6 +35,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.dados {
+  color: #fff;
+}
+.endereco {
+  color: #fff;
+  font-size: 20px;
 }
 
 .tituloBox {
@@ -116,7 +131,8 @@ body {
   padding-left: 1rem;
   margin-left: 1rem;
 }
-
+.header {
+}
 .cronometro {
   width: 158px;
   font-size: 4rem;
@@ -171,9 +187,9 @@ body {
   justify-content: center;
 }
 .tituloBox {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .subtituloBox {
-  font-size: 15px;
+  font-size: 1rem;
 }
