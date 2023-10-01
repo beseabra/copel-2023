@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <script>
+        let tempoTotal = 0;
+        let cronometro;
+
+        function iniciarCronometro() {
+            cronometro = setInterval(function () {
+                tempoTotal++;
+                atualizarCronometro();
+            }, 1000);
+        }
+
+        function pararCronometro() {
+            clearInterval(cronometro);
+        }
+
+        function zerarCronometro() {
+            tempoTotal = 0;
+            atualizarCronometro();
+        }
+
+        function atualizarCronometro() {
+            const minutos = Math.floor((tempoTotal % 3600) / 60);
+            const segundos = tempoTotal % 60;
+
+            const formatoMinutos = minutos.toString().padStart(2, '0');
+            const formatoSegundos = segundos.toString().padStart(2, '0');
+
+            document.getElementById('cronometro').textContent = `${formatoMinutos}:${formatoSegundos}`;
+        }
+
+        window.onload = function () {
+            iniciarCronometro();
+        }
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FATURAMENTO</title>
+    <link rel="stylesheet" href="../style/Faturamento.css">
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="teste">
+            <div>
+                <div class="dados">
+                    <div>
+                        <p class="title">ATENDIMENTO INICIADO A </p>
+
+
+                    </div>
+                    <h1 class="subtitle"> Maria Jesus Da Silva</h1>
+                </div>
+                <div class="endereco">
+                    <p><span class="adress">LOGADOURO:</span> Av. Rua do Bairro Flore, 00 - CURITIBA-CP</p>
+                    <P><span class="adress">CPF:</span> 000.000.000-00 <span class="adress">UC:</span> 00000000</P>
+                </div>
+            </div>
+            <div class="logo">
+                <a href="Home.html" target="_self" class="voltar">
+                    <img src="../icons/logo.png" alt="">
+                </a>
+            </div>
+            <div class="register">
+                <a href="Home.html" target="_self" class="voltar">
+                    <img src="../icons/registrar.svg" alt="">
+                </a>
+            </div>
+            <div class="container-header">
+                <a href="Home.html" target="_self" class="voltar">x</a>
+
+                <div id="cronometro" class="cronometro">00:00</div>
+
+
+
+            </div>
+        </div>
+
+    </header>
+
+    <div class="title-faturamento">
+        <div style="padding: 0.8rem;">
+            <img src="../icons/back.svg" alt="">
+        </div>
+        <div style="width: 85rem;">
+            <p class="ura">FATURAMENTO</p>
+        </div>
+    </div>
+
+    <div class="container-wrapper">
+        <div class="container">
+            <div class="mes-ano">
+                <div>
+                    ABRIL
+                </div>
+                <div>
+                    2023
+                </div>
+            </div>
+
+            <div class="valor">
+                R$ 128,37
+            </div>
+            <div class="status">
+                <div style="color: #EBAC0B;">
+                    ABERTA
+                </div>
+                .......................................
+                <div>
+                    15/05
+                </div>
+            </div>
+            <div class="clock">
+                <img src="../icons/clock.svg" alt="">
+                <div class="container-consumo">
+                    <div class="consumo">
+                        <b>2400 kW </b> &nbsp; CONSUMIDOS
+                    </div>
+                    <div class="consumo">
+                        22/03 | 23/04
+                    </div>
+                </div>
+            </div>
+            <div class="infosOs">
+                <div style="color: #EBAC0B;">
+                    ABERTA
+                </div>
+                <div>
+                    15/05
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mes-ano">
+                <div>
+                    MARÇO
+                </div>
+                <div>
+                    2023
+                </div>
+            </div>
+            <div class="valor">
+                R$ 137,46
+            </div>
+            <div class="status">
+                <div style="color: red;">
+                    ATRASADA
+                </div>
+                .......................................
+                <div>
+                    11/05
+                </div>
+            </div>
+            <div class="clock">
+                <img src="../icons/clock.svg" alt="">
+                <div class="container-consumo">
+                    <div class="consumo">
+                        <b>2780 kW </b> &nbsp; CONSUMIDOS
+                    </div>
+                    <div class="consumo">
+                        22/02 | 23/03
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mes-ano">
+                <div>
+                    FEVEREIRO
+                </div>
+                <div>
+                    2023
+                </div>
+            </div>
+            <div class="valor">
+                R$ 128,37
+            </div>
+            <div class="status">
+                <div style="color:green;">
+                    FECHADA
+                </div>
+                .......................................
+                <div>
+                    15/05
+                </div>
+            </div>
+            <div class="clock">
+                <img src="../icons/clock.svg" alt="">
+                <div class="container-consumo">
+                    <div class="consumo">
+                        <b>2400 kW </b> &nbsp; CONSUMIDOS
+                    </div>
+                    <div class="consumo">
+                        22/03 | 23/04
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal">
+            <a href="Home.html" target="_self">
+                <img src="../icons/interrogation.svg" alt="">
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
