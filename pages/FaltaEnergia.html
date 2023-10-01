@@ -3,41 +3,7 @@
 
 <head>
 
-    <script>
-        let tempoTotal = 0;
-        let cronometro;
 
-        function iniciarCronometro() {
-            cronometro = setInterval(function () {
-                tempoTotal++;
-                atualizarCronometro();
-            }, 1000);
-        }
-
-        function pararCronometro() {
-            clearInterval(cronometro);
-        }
-
-        function zerarCronometro() {
-            tempoTotal = 0;
-            atualizarCronometro();
-        }
-
-        function atualizarCronometro() {
-            const minutos = Math.floor((tempoTotal % 3600) / 60);
-            const segundos = tempoTotal % 60;
-
-            const formatoMinutos = minutos.toString().padStart(2, '0');
-            const formatoSegundos = segundos.toString().padStart(2, '0');
-
-            document.getElementById('cronometro').textContent = `${formatoMinutos}:${formatoSegundos}`;
-        }
-
-        window.onload = function () {
-            iniciarCronometro();
-        }
-
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FaltaEnergia</title>
@@ -46,6 +12,7 @@
 </head>
 
 <body>
+
     <header class="cabecalho">
         <div class="teste">
             <div>
@@ -68,9 +35,10 @@
                 </a>
             </div>
             <div class="register">
-                <a href="Home.html" target="_self" class="voltar">
+                <!-- Botão para abrir a terceira modal -->
+                <button id="add-register" style="background-color: transparent; border: none;">
                     <img src="../icons/registrar.svg" alt="">
-                </a>
+                </button>
             </div>
             <div class="container-header">
                 <a href="Home.html" target="_self" class="voltar">x</a>
@@ -188,14 +156,14 @@
             </div>
 
         </div>
-        <div class="modal">
+        <div class="modalInformation">
             <a href="Home.html" target="_self">
                 <img src="../icons/interrogation.svg" alt="">
             </a>
         </div>
 
     </div>
-    <p class="title-container">ORDEM DE SERVIÇO <a href="Home.html" target="_self" class="voltar">+</a> </p>
+    <p class="title-container">ORDEM DE SERVIÇO <a href="OrdemServico.html" target="_self" class="voltar">+</a> </p>
     <div class="ordem">
         <div class="container">
             <div class="mes-ano">
@@ -245,15 +213,131 @@
             </div>
 
         </div>
-        <div class="modal">
+        <div class="modalInformation">
             <a href="Home.html" target="_self">
                 <img src="../icons/interrogation.svg" alt="">
             </a>
         </div>
     </div>
+    <!-- Modal para o ícone "Registrar" -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span id="close-modal3" class="buttonModal">&times;</span>
+            <h2 style="margin-bottom: 1rem; margin-top: 1rem; text-align: center;">Registrar</h2>
+            <!-- Conteúdo da modal para o ícone "Registrar" aqui -->
+            <label for="descricao" style="font-weight: 600;">Descrição:</label>
+            <br>
+            <textarea name="textarea" cols="30" rows="10" style="width: 100%;"></textarea>
 
+            <select name="select" id="select" style="margin-top: 1rem; width: 100%;">
+                <option value="value1">Cliente solicitou segunda via de Faturamento.</option>
+                <option value="value2">Cliente solicitou consulta de debitos</option>
+                <option value="value3">Cliente informou queda de energia na região</option>
+            </select>
+            <button type="submit" style="margin-top: 1rem; height: 1.5rem; ;">Salvar Registro</button>
 
+        </div>
 
+        <script>
+            // Função para mostrar a modal para o ícone "Registrar"
+            function openRegisterModal() {
+                const modal3 = document.getElementById("modal3");
+                modal3.style.display = "flex";
+            }
+
+            // Event listener para o ícone "Registrar" que abre a modal para o ícone "Registrar"
+            document.getElementById("add-register").addEventListener("click", openRegisterModal);
+
+            // Event listener para o botão de fechar na modal para o ícone "Registrar"
+            document.getElementById("close-modal3").addEventListener("click", closeRegisterModal);
+
+            // Função para fechar a modal para o ícone "Registrar"
+            function closeRegisterModal() {
+                const modal3 = document.getElementById("modal3");
+                modal3.style.display = "none";
+            }
+            function addWordToTextarea() {
+                const select = document.getElementById("select");
+                const textarea = document.querySelector("textarea");
+
+                // Verifica se uma opção foi selecionada
+                if (select.selectedIndex !== -1) {
+                    const selectedOption = select.options[select.selectedIndex];
+                    const wordToAdd = selectedOption.text;
+
+                    // Adiciona a palavra selecionada ao textarea
+                    textarea.value += wordToAdd + " ";
+                }
+            }
+
+            // Event listener para o botão "add"
+            document.querySelector("#modal3 button[type='submit']").addEventListener("click", addWordToTextarea);
+
+            window.addEventListener("click", function (event) {
+                const modal = document.getElementById("modal");
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+            let tempoTotal = 0;
+            let cronometro;
+
+            function iniciarCronometro() {
+                cronometro = setInterval(function () {
+                    tempoTotal++;
+                    atualizarCronometro();
+                }, 1000);
+            }
+
+            function pararCronometro() {
+                clearInterval(cronometro);
+            }
+
+            function zerarCronometro() {
+                tempoTotal = 0;
+                atualizarCronometro();
+            }
+
+            function atualizarCronometro() {
+                const minutos = Math.floor((tempoTotal % 3600) / 60);
+                const segundos = tempoTotal % 60;
+
+                const formatoMinutos = minutos.toString().padStart(2, '0');
+                const formatoSegundos = segundos.toString().padStart(2, '0');
+
+                document.getElementById('cronometro').textContent = `${formatoMinutos}:${formatoSegundos}`;
+            }
+
+            window.onload = function () {
+                iniciarCronometro();
+            }
+            // Função para mostrar o modal de Registro
+            function showModalRegistro() {
+                const modalRegistro = document.getElementById("modalRegistro");
+                modalRegistro.style.display = "flex";
+            }
+
+            // Função para fechar o modal de Registro
+            function closeModalRegistro() {
+                const modalRegistro = document.getElementById("modalRegistro");
+                modalRegistro.style.display = "none";
+            }
+
+            // Event listener para o ícone "Registrar"
+            document.querySelector(".register img").addEventListener("click", showModalRegistro);
+
+            // Event listener para o botão de fechar no modal de Registro
+            document.getElementById("close-modalRegistro").addEventListener("click", closeModalRegistro);
+
+            // Fechar o modal de Registro se o usuário clicar fora dele
+            window.addEventListener("click", function (event) {
+                const modalRegistro = document.getElementById("modalRegistro");
+                if (event.target === modalRegistro) {
+                    closeModalRegistro();
+                }
+            });
+
+        </script>
 
 
 </body>
