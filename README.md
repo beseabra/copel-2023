@@ -1,2 +1,2 @@
-# trio-projeto-web-front
-Projeto em trio da disciplina de Programação Front-End.
+#Duo-projeto-web-Copel
+Projeto em Dupla realizado na competição do Hackthon da Copel em 2023.
